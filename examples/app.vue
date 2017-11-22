@@ -107,6 +107,7 @@
       background-color: #ECF8FF;
       border-radius: 4px;
       border-left: #50bfff 5px solid;
+      margin-top: 20px;
 
       code {
         background-color: rgba(#fff, .7);
@@ -117,6 +118,7 @@
   .demo {
     margin: 20px 0;
   }
+  
   @media (max-width: 1140px) {
     .container,
     .page-container {

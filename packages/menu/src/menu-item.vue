@@ -6,17 +6,32 @@
       'is-active': active,
       'is-disabled': disabled
     }">
-    <slot></slot>
+    <el-tooltip
+      v-if="$parent === rootMenu && rootMenu.collapse"
+      effect="dark"
+      placement="right">
+      <div slot="content"><slot name="title"></slot></div>
+      <div style="position: absolute;left: 0;top: 0;height: 100%;width: 100%;display: inline-block;box-sizing: border-box;padding: 0 20px;">
+        <slot></slot>
+      </div>
+    </el-tooltip>
+    <template v-else>
+      <slot></slot>
+      <slot name="title"></slot>
+    </template>
   </li>
 </template>
 <script>
   import Menu from './menu-mixin';
+  import ElTooltip from 'element-ui/packages/tooltip';
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
     name: 'ElMenuItem',
 
     componentName: 'ElMenuItem',
+
+    components: { ElTooltip },
 
     mixins: [Menu, Emitter],
 
@@ -36,7 +51,7 @@
     },
     computed: {
       active() {
-        return this.index === this.rootMenu.activedIndex;
+        return this.index === this.rootMenu.activeIndex;
       }
     },
     methods: {

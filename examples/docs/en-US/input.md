@@ -640,6 +640,13 @@ Attribute | Description | Type | Options | Default
 | popper-class | custom class name for autocomplete's dropdown | string | — | — |
 | trigger-on-focus | whether show suggestions when input focus | boolean | — | true |
 | on-icon-click | hook function when clicking on the input icon | function | — | — |
+| select-when-unmatched | whether to emit a `select` event on enter when there is no autocomplete match | boolean | — | false |
+
+### props
+| Attribute | Description | Type | Accepted Values | Default |
+| --------- | ----------------- | ------ | ------ | ------ |
+| label     | specify which key of option object is used as the option's label | string | — | value |
+| value     | specify which key of option object is used as the option's value | string | — | value |
 
 ### props
 | Attribute | Description | Type | Accepted Values | Default |

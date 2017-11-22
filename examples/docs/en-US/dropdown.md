@@ -210,6 +210,8 @@ Clicking each dropdown item fires an event whose parameter is assigned by each i
 | menu-align    | horizontal alignment     | string          | start/end  | end |
 | trigger       | how to trigger     | string  |    hover/click  |  hover |
 | hide-on-click | whether to hide menu after clicking menu-item     | boolean          | — | true |
+| show-timeout | Delay time before show a dropdown     | number          | — | 250 |
+| hide-timeout | Delay time before hide a dropdown     | number          | — | 150 |
 
 ### Dropdown Events
 | Event Name | Description | Parameters |
@@ -221,6 +223,6 @@ Clicking each dropdown item fires an event whose parameter is assigned by each i
 ### Dropdown Menu Item Attributes
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
-| command       | a command to be dispatched to Dropdown's `command` callback | string  |          —             |    —     |
+| command       | a command to be dispatched to Dropdown's `command` callback | string/number/object  |          —             |    —     |
 | disabled      | whether the item is disabled  | boolean  |          —             |    false     |
 | divided       | whether a divider is displayed  | boolean  |          —             |    false     |

@@ -210,6 +210,8 @@
 | menu-align    | 菜单水平对齐方向     | string          | start, end  | end |
 | trigger       | 触发下拉的行为     | string          | hover, click  | hover |
 | hide-on-click | 是否在点击菜单项后隐藏菜单     | boolean          | — | true |
+| show-timeout  | 展开下拉菜单的延时     | number          | — | 250 |
+| hide-timeout  | 收起下拉菜单的延时     | number          | — | 150 |
 
 ### Dropdown Events
 | 事件名称      | 说明    | 回调参数      |
@@ -221,6 +223,6 @@
 ### Dropdown Menu Item Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
-| command       | 指令     | string          | — | — |
+| command       | 指令     | string/number/object          | — | — |
 | disabled      | 禁用     | boolean          | — | false |
 | divided       | 显示分割线     | boolean          | — | false |

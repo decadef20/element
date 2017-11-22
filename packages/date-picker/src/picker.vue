@@ -5,8 +5,10 @@
     :readonly="!editable || readonly"
     :disabled="disabled"
     :size="size"
+    :id="id"
     v-clickoutside="handleClose"
     :placeholder="placeholder"
+    :name="name"
     @focus="handleFocus"
     @blur="handleBlur"
     @keydown.native="handleKeydown"
@@ -178,7 +180,7 @@ const TYPE_VALUE_RESOLVER_MAP = {
 };
 const PLACEMENT_MAP = {
   left: 'bottom-start',
-  center: 'bottom-center',
+  center: 'bottom',
   right: 'bottom-end'
 };
 
@@ -205,10 +207,12 @@ export default {
     readonly: Boolean,
     placeholder: String,
     disabled: Boolean,
+    name: String,
     clearable: {
       type: Boolean,
       default: true
     },
+    id: String,
     popperClass: String,
     editable: {
       type: Boolean,
@@ -409,9 +413,10 @@ export default {
     handleKeydown(event) {
       const keyCode = event.keyCode;
 
-      // tab
-      if (keyCode === 9) {
+      // TAB or ESC
+      if (keyCode === 9 || keyCode === 27) {
         this.pickerVisible = false;
+        event.stopPropagation();
       }
     },
 
